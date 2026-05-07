@@ -43,8 +43,18 @@ const markdown = markdownIt({
     );
   },
 })
-  // Enable <ol> and <ul> items to not assume an HTML structure so we can keep numbering from responses.
-  .disable("list");
+  // Disabled rules:
+  //  - "list":     Render <ol>/<ul> items as plain text so we can keep
+  //                numbering from responses without forcing an HTML
+  //                structure on them.
+  //  - "lheading": Setext headings (`Title\n===` / `Title\n---`) flip
+  //                the previous paragraph into <h1>/<h2> the moment a
+  //                single `=` or `-` lands in a streaming chunk, then
+  //                revert when more chunk content arrives. That round-
+  //                trip is the dominant cause of the visible "size jump"
+  //                during streaming. ATX headings (`#`, `##`, ...) are
+  //                unaffected.
+  .disable(["list", "lheading"]);
 
 // Custom renderer rule to make links open in new tab
 markdown.renderer.rules.link_open = (tokens, idx) => {

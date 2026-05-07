@@ -26,6 +26,7 @@ _by using the AnythingLLM embedded chat widget you are responsible for securing 
 - `cd embed` from the root of the repo
 - `yarn` to install all dev and script dependencies
 - `yarn dev` to boot up an example HTML page to use the chat embed widget.
+- `yarn test:render` to verify the streaming markdown render contract.
 
 While in development mode (`yarn dev`) the script will rebuild on any changes to files in the `src` directory. Ensure that the required keys for the development embed are accurate and set.
 
