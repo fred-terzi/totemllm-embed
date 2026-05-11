@@ -1,8 +1,12 @@
 // Anything with "null" requires a translation. Contribute to translation via a PR!
 const TRANSLATIONS = {
   chat: {
-    "send-message": null,
-    "reset-chat": null,
+    "send-message": "메시지 보내기",
+    "reset-chat": "채팅 초기화",
+    "close-chat": "채팅 닫기",
+    "message-copied": "복사되었습니다!",
+    "session-id": "세션 ID",
+    "email-support": "이메일 지원",
   },
 };
 

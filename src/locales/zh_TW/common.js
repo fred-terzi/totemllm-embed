@@ -1,8 +1,12 @@
 // Anything with "null" requires a translation. Contribute to translation via a PR!
 const TRANSLATIONS = {
   chat: {
-    "send-message": null,
-    "reset-chat": null,
+    "send-message": "傳送訊息",
+    "reset-chat": "重設聊天",
+    "close-chat": "關閉聊天",
+    "message-copied": "已複製！",
+    "session-id": "工作階段 ID",
+    "email-support": "電子郵件支援",
   },
 };
 
