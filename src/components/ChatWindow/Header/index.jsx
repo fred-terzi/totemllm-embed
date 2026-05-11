@@ -9,7 +9,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function ChatWindowHeader({
   sessionId,
@@ -126,7 +126,9 @@ function SessionID({ sessionId }) {
     return (
       <div className="hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4">
         <Check size={24} />
-        <p className="allm-text-[14px] allm-font-sans">{t("chat.message-copied")}</p>
+        <p className="allm-text-[14px] allm-font-sans">
+          {t("chat.message-copied")}
+        </p>
       </div>
     );
   }
@@ -152,7 +154,9 @@ function ContactSupport({ email = null }) {
       className="allm-no-underline hover:allm-underline hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4"
     >
       <Envelope size={24} />
-      <p className="allm-text-[14px] allm-font-sans">{t("chat.email-support")}</p>
+      <p className="allm-text-[14px] allm-font-sans">
+        {t("chat.email-support")}
+      </p>
     </a>
   );
 }

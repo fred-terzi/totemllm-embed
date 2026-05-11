@@ -5,8 +5,8 @@ const TRANSLATIONS = {
     "reset-chat": "Neuer Chat",
     "close-chat": "Chat schließen",
     "message-copied": "Kopiert!",
-    "session-id" : "Sitzung ID",
-    "email-support" : "EMail Support"
+    "session-id": "Sitzung ID",
+    "email-support": "EMail Support",
   },
 };
 
