@@ -34,7 +34,7 @@ export default function ResetChat({
             className="allm-h-fit allm-px-0 hover:allm-cursor-pointer allm-border-none allm-text-sm allm-bg-transparent hover:allm-opacity-80 hover:allm-underline"
             onClick={closeChat}
           >
-            Close Chat
+              {t("chat.close-chat")}
           </button>
         </>
       )}

@@ -9,6 +9,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
+import {useTranslation} from "react-i18next";
 
 export default function ChatWindowHeader({
   sessionId,
@@ -90,6 +91,8 @@ export default function ChatWindowHeader({
 
 function OptionsMenu({ settings, showing, resetChat, sessionId, menuRef }) {
   if (!showing) return null;
+  const { t } = useTranslation();
+
   return (
     <div
       ref={menuRef}
@@ -100,7 +103,7 @@ function OptionsMenu({ settings, showing, resetChat, sessionId, menuRef }) {
         className="hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4"
       >
         <ArrowCounterClockwise size={24} />
-        <p className="allm-text-[14px]">Reset Chat</p>
+        <p className="allm-text-[14px]">{t("chat.reset-chat")}</p>
       </button>
       <ContactSupport email={settings.supportEmail} />
       <SessionID sessionId={sessionId} />
@@ -110,7 +113,7 @@ function OptionsMenu({ settings, showing, resetChat, sessionId, menuRef }) {
 
 function SessionID({ sessionId }) {
   if (!sessionId) return null;
-
+  const { t } = useTranslation();
   const [sessionIdCopied, setSessionIdCopied] = useState(false);
 
   const copySessionId = () => {
@@ -123,7 +126,7 @@ function SessionID({ sessionId }) {
     return (
       <div className="hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4">
         <Check size={24} />
-        <p className="allm-text-[14px] allm-font-sans">Copied!</p>
+        <p className="allm-text-[14px] allm-font-sans">{t("chat.message-copied")}</p>
       </div>
     );
   }
@@ -134,14 +137,14 @@ function SessionID({ sessionId }) {
       className="hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4"
     >
       <Copy size={24} />
-      <p className="allm-text-[14px]">Session ID</p>
+      <p className="allm-text-[14px]">{t("chat.session-id")}</p>
     </button>
   );
 }
 
 function ContactSupport({ email = null }) {
   if (!email) return null;
-
+  const { t } = useTranslation();
   const subject = `Inquiry from ${window.location.origin}`;
   return (
     <a
@@ -149,7 +152,7 @@ function ContactSupport({ email = null }) {
       className="allm-no-underline hover:allm-underline hover:allm-cursor-pointer allm-bg-white allm-gap-x-[12px] hover:allm-bg-gray-100 allm-rounded-lg allm-border-none allm-flex allm-items-center allm-text-base allm-text-[#7A7D7E] allm-font-bold allm-px-4"
     >
       <Envelope size={24} />
-      <p className="allm-text-[14px] allm-font-sans">Email Support</p>
+      <p className="allm-text-[14px] allm-font-sans">{t("chat.email-support")}</p>
     </a>
   );
 }
