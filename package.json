@@ -12,7 +12,6 @@
     "build:publish": "yarn build:publish:js && yarn build:publish:css",
     "build:publish:js": "yarn build && mkdir -p ../frontend/public/embed && cp -r dist/anythingllm-chat-widget.min.js ../frontend/public/embed/anythingllm-chat-widget.min.js",
     "build:publish:css": "cp -r dist/anythingllm-chat-widget.min.css ../frontend/public/embed/anythingllm-chat-widget.min.css",
-    "test:render": "node scripts/streaming-render-spec.mjs",
     "lint": "yarn prettier --ignore-path ../.prettierignore --write ./src",
     "verify:translations": "cd src/locales && node verifyTranslations.mjs",
     "normalize:translations": "cd src/locales && node normalizeEn.mjs"
