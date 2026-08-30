@@ -3,7 +3,7 @@ import ChatHistory from "./ChatHistory";
 import PromptInput from "./PromptInput";
 import handleChat from "@/utils/chat";
 import ChatService from "@/models/chatService";
-export const SEND_TEXT_EVENT = "anythingllm-embed-send-prompt";
+export const SEND_TEXT_EVENT = "totem_llm_embed_send_prompt";
 
 export default function ChatContainer({
   sessionId,
